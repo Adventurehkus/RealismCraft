@@ -1,0 +1,68 @@
+["Main System"]
+	#BLOOD_AND_HEALTH: Health max value decreases with blood loss. BLOOD_ONLY: Instant death at 0 blood. DISABLED: Vanilla behavior.
+	#Allowed Values: BLOOD_AND_HEALTH, BLOOD_ONLY, DISABLED
+	bloodSystemMode = "BLOOD_AND_HEALTH"
+	#Enable negative potion effects (Slowness, Weakness, etc.) when blood is low.
+	debuffsEnabled = true
+	#Blood loss per second at bleed level 1.
+	# Default: 1.0
+	# Range: 0.0 ~ 100.0
+	lightBleedDrain = 1.0
+	#Blood loss per second at bleed level 2.
+	# Default: 5.0
+	# Range: 0.0 ~ 100.0
+	heavyBleedDrain = 5.0
+	#Blood loss per second at bleed level 3.
+	# Default: 10.0
+	# Range: 0.0 ~ 100.0
+	severeBleedDrain = 10.0
+	#Maximum distance in blocks to heal another player with medical items.
+	# Default: 2.0
+	# Range: 0.5 ~ 10.0
+	medicalMaxDistance = 2.0
+	#Cooldown in ticks after using a medical item on another player (20 ticks = 1 second).
+	# Default: 20
+	# Range: 0 ~ 600
+	medicalCooldown = 20
+	#Number of bleed levels removed by a single bandage.
+	# Default: 1
+	# Range: 1 ~ 10
+	bandageHealAmount = 1
+	#Fall distance required to cause a leg dislocation.
+	# Default: 4.0
+	# Range: 1.0 ~ 100.0
+	fallDistanceDislocation = 4.0
+	#Fall distance required to cause a leg fracture.
+	# Default: 6.0
+	# Range: 1.0 ~ 100.0
+	fallDistanceFracture = 6.0
+
+[Ragdoll]
+	#Enable death ragdoll вЂ” player body stays as ragdoll after death for a configurable duration.
+	deathRagdollEnabled = true
+	#How long (in seconds) the death ragdoll persists before disappearing. 0 = instant removal.
+	# Default: 10
+	# Range: 0 ~ 600
+	deathRagdollDuration = 10
+	#Death ragdolls react to explosions, projectile impacts and other external forces.
+	deathRagdollReactToForces = true
+
+["Visual Effects"]
+	#Enable blur effect when taking damage.
+	enableHitBlur = true
+	#Multiplier for the hit blur intensity. Higher = stronger blur.
+	# Default: 1.0
+	# Range: 0.0 ~ 5.0
+	hitBlurMultiplier = 1.0
+	#Enable the red vignette blood overlay when low on blood.
+	enableBloodOverlay = true
+
+["GUI and HUD"]
+	#Show the vanilla health bar (hearts) above the hotbar.
+	showVanillaHealth = false
+	#Position of the in-game HUD (outside inventory).
+	#Allowed Values: BOTTOM_LEFT, BOTTOM_RIGHT, DISABLED
+	hudGuiPosition = "BOTTOM_LEFT"
+	#Position of the detailed GUI inside the inventory screen.
+	#Allowed Values: BOTTOM_LEFT, BOTTOM_RIGHT, DISABLED
+	inventoryGuiPosition = "BOTTOM_RIGHT"
