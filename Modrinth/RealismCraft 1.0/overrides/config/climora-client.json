@@ -1,0 +1,7 @@
+{
+  "_about": "Climora client config. Restart the game to apply. See docs/CONFIG.md for every option.",
+  "localPrecipitation": true,
+  "windBlownPrecipitation": true,
+  "dynamicClouds": true,
+  "cloudRenderDistance": 0
+}

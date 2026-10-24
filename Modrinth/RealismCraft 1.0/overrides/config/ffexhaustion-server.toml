@@ -1,0 +1,275 @@
+#If true, the player's exhaustion level carries over on death/respawn.
+#If false (default), exhaustion resets to 0 on death.
+copyOnDeath = false
+#If true (default), players in creative mode are fully exempt from exhaustion:
+#no gain, no recovery processing, no speed/attack penalties, and the HUD is hidden.
+disableInCreative = true
+
+#Recovery settings
+[recovery]
+	#Base ticks to wait after an exhaustion-increasing action before recovery begins.
+	#20 ticks = 1 second. Modified further by player level when level modifiers are enabled.
+	# Default: 40
+	# Range: 0 ~ 1200
+	recoveryDelayTicks = 40
+	#Base recovery rate passed to the equation as the variable 'rate'.
+	#Standing/sneaking bonuses are added to this value before the equation runs.
+	# Default: 0.005
+	# Range: 0.0 ~ 1.0
+	recoveryRatePerTick = 0.005
+	#Equation used to recover exhaustion toward zero.
+	#Variables: x (current exhaustion), rate (effective recovery rate including bonuses).
+	#Supported: +, -, *, /, %, ^, (), min(), max(), abs(), clamp(), pow(), sqrt(), floor(), ceil(), round().
+	#Default: "x - rate"
+	recoveryEquation = "x - rate"
+	#Extra recovery rate added only when truly stationary (horizontal speed < 0.01 and on ground).
+	#Set to 0 to disable.
+	# Default: 0.003
+	# Range: 0.0 ~ 1.0
+	standingBonus = 0.003
+	#Extra recovery rate added while sneaking/crouching AND standing on the ground.
+	#Holding shift in fluid (sinking) does not apply this bonus. Set to 0 to disable.
+	# Default: 0.002
+	# Range: 0.0 ~ 1.0
+	sneakingBonus = 0.002
+
+#Activities that add exhaustion (sprint, swim-sprint, jump, fall, attack, shield, floating, …).
+#Put new exhaustion-gain features in this group so they stay together in the config screen.
+[gain]
+
+	#Ground sprinting settings
+	[gain.sprinting]
+		#Enable ground-sprint exhaustion gain and speed decay.
+		enabled = true
+		#Exhaustion added per tick while sprinting on ground.
+		# Default: 0.002
+		# Range: 0.0 ~ 1.0
+		increasePerTick = 0.002
+		#Exhaustion level at which ground-sprint speed decay begins.
+		# Default: 0.5
+		# Range: 0.0 ~ 1.0
+		speedDecayStart = 0.5
+		#Max movement-speed reduction at full exhaustion while ground-sprinting.
+		# Default: 0.3
+		# Range: 0.0 ~ 1.0
+		speedDecayTotal = 0.3
+		#Decay factor equation. Variables: t (0-1 progress), x, start, total. Default: "t"
+		speedDecayEquation = "t"
+
+	#Swim-sprint settings (sprinting while swimming / underwater).
+	[gain.swim_sprinting]
+		#Enable swim-sprint exhaustion gain and speed decay.
+		enabled = true
+		#Exhaustion added per tick while swim-sprinting.
+		# Default: 0.003
+		# Range: 0.0 ~ 1.0
+		increasePerTick = 0.003
+		#Exhaustion level at which swim-sprint speed decay begins.
+		# Default: 0.4
+		# Range: 0.0 ~ 1.0
+		speedDecayStart = 0.4
+		#Max movement-speed reduction at full exhaustion while swim-sprinting.
+		# Default: 0.4
+		# Range: 0.0 ~ 1.0
+		speedDecayTotal = 0.4
+		#Decay factor equation. Variables: t, x, start, total. Default: "t"
+		speedDecayEquation = "t"
+
+	#Floating in water — exhaustion while in water and not standing on a block.
+	#Does not apply while swim-sprinting (that uses swim_sprinting). Disabled by default.
+	[gain.floating]
+		#Enable exhaustion gain while floating in water (in water and not on a block).
+		enabled = false
+		#Exhaustion added per tick while floating in water. Example: 0.001
+		# Default: 0.001
+		# Range: 0.0 ~ 1.0
+		increasePerTick = 0.001
+
+	#Jumping settings
+	[gain.jumping]
+		#Enable exhaustion gain from jumping.
+		enabled = true
+		#Exhaustion added on each jump.
+		# Default: 0.03
+		# Range: 0.0 ~ 1.0
+		increase = 0.03
+		#Additional exhaustion when jumping while sprinting.
+		# Default: 0.02
+		# Range: 0.0 ~ 1.0
+		sprintExtra = 0.02
+		#If true, a normal (non-sprint) jump starts/resets the recovery delay.
+		causesDelay = false
+		#If true, a sprint-jump starts/resets the recovery delay.
+		sprintCausesDelay = true
+		#If true, sprint-jump horizontal velocity is scaled down using the same
+		#exhaustion decay as ground sprinting (Y velocity / jump height is unchanged).
+		#Vanilla adds a fixed ~0.2 horizontal boost on sprint-jump that ignores movement-speed attributes.
+		sprintJumpVelocityDecay = true
+
+	#Falling / landing settings — exhaustion applied when landing after a fall.
+	#Amount scales with fall distance above the minimum threshold.
+	[gain.falling]
+		#Enable exhaustion gain when landing after falling.
+		enabled = true
+		#Minimum fall distance (blocks) before landing adds exhaustion.
+		#Falls shorter than this are ignored. Vanilla fall damage typically starts around 3 blocks.
+		# Default: 3.0
+		# Range: 0.0 ~ 256.0
+		minFallDistance = 3.0
+		#Exhaustion added per block of fall distance above minFallDistance.
+		# Default: 0.015
+		# Range: 0.0 ~ 1.0
+		increasePerBlock = 0.015
+		#Hard cap on exhaustion gained from a single landing (0 = no cap beyond the 0-1 exhaustion range).
+		# Default: 0.4
+		# Range: 0.0 ~ 1.0
+		maxIncrease = 0.4
+		#If true, landing that adds exhaustion starts/resets the recovery delay.
+		causesDelay = true
+
+	#Attack settings
+	[gain.attacking]
+		#Enable exhaustion gain from attacks and attack-speed decay.
+		enabled = true
+		#Exhaustion added when the player successfully hits an entity.
+		# Default: 0.04
+		# Range: 0.0 ~ 1.0
+		hitIncrease = 0.04
+		#Exhaustion added for a deliberate air swing that hits no entity.
+		#Mining/block clicks never count as combat misses.
+		# Default: 0.02
+		# Range: 0.0 ~ 1.0
+		missIncrease = 0.02
+		#Exhaustion level at which attack-speed (swing interval) decay begins.
+		# Default: 0.5
+		# Range: 0.0 ~ 1.0
+		speedDecayStart = 0.5
+		#Max attack-speed reduction at full exhaustion (0.5 = 50% slower swings).
+		# Default: 0.5
+		# Range: 0.0 ~ 1.0
+		speedDecayTotal = 0.5
+		#Decay factor equation for attack speed. Variables: t, x, start, total. Default: "t"
+		speedDecayEquation = "t"
+
+	#Shield / blocking settings — exhaustion while holding block only.
+	[gain.shield]
+		#Enable exhaustion gain while blocking with a shield.
+		enabled = true
+		#Exhaustion added per tick while actively blocking with a shield.
+		# Default: 0.004
+		# Range: 0.0 ~ 1.0
+		increasePerTick = 0.004
+
+#Potion effects applied while exhaustion is at or above a threshold.
+#Disabled by default. Each entry: minExhaustion;effect_id;amplifier;duration_ticks
+#Example: "0.5;minecraft:slowness;0;40" — Slowness I while exhaustion >= 0.5.
+#Effects are refreshed while above the threshold (use duration > ~20 so they do not flicker).
+#Amplifier is 0-based (0 = level I). Invalid entries are skipped with a warning.
+[potion_effects]
+	#Master toggle for threshold potion effects.
+	enabled = false
+	#List of effect entries. Format: minExhaustion;effect_id;amplifier;duration_ticks
+	entries = []
+
+#Attribute modifiers driven by exhaustion.
+#Two independent systems (both disabled by default):
+#  threshold — fixed modifier while exhaustion >= min
+#  scaling — modifier amount = amountAtFull * currentExhaustion (0..1)
+#Operation values: add_value | add_multiplied_base | add_multiplied_total
+#These are separate from the built-in sprint/attack speed decay.
+[attributes]
+
+	#Fixed attribute modifiers applied while exhaustion is at or above a threshold.
+	[attributes.threshold]
+		#Enable threshold (step) attribute modifiers.
+		enabled = false
+		#Format: minExhaustion;attribute_id;amount;operation
+		#Example: "0.7;minecraft:generic.movement_speed;-0.15;add_multiplied_total"
+		entries = []
+
+	#Scaling attribute modifiers — magnitude scales linearly with current exhaustion.
+	#Applied amount = amountAtFull * exhaustion (exhaustion in [0, 1]).
+	[attributes.scaling]
+		#Enable continuous scaling attribute modifiers.
+		enabled = false
+		#Format: attribute_id;amountAtFull;operation
+		#Example: "minecraft:generic.attack_damage;-0.25;add_multiplied_total"
+		entries = []
+
+#Optional mod compatibility settings. Only active when the matching mod is installed.
+[compat]
+
+	#Better Combat compatibility (only active when bettercombat is installed).
+	#Multi-target swings are taxed once for the primary hit, plus a per-extra-target bonus.
+	#Combo scaling adds extra exhaustion as the combo index increases.
+	[compat.better_combat]
+		#Enable Better Combat-specific exhaustion handling for attributed weapons.
+		enabled = true
+		#Exhaustion for the primary (first) target of a Better Combat swing.
+		# Default: 0.04
+		# Range: 0.0 ~ 1.0
+		hitIncrease = 0.04
+		#Exhaustion when a Better Combat swing hits no entity.
+		# Default: 0.02
+		# Range: 0.0 ~ 1.0
+		missIncrease = 0.02
+		#Extra exhaustion per additional target beyond the first in a multi-hit swing.
+		# Default: 0.01
+		# Range: 0.0 ~ 1.0
+		multiHitBonus = 0.01
+		#Extra exhaustion added per combo step (combo index * this value) on primary hits.
+		# Default: 0.005
+		# Range: 0.0 ~ 1.0
+		comboScaling = 0.005
+		#When true, Better Combat weapons pay only Better Combat hit/miss costs.
+		#When false, vanilla hit/miss costs are added too if attacking is enabled.
+		suppressVanillaAttackTax = true
+
+	#VentureCraft Gliders compatibility (only active when vc_gliders is installed).
+	#When exhaustion reaches the drop threshold while gliding, the player is forced out of the glider.
+	[compat.gliders]
+		#Enable VC Gliders exhaustion gain and forced drop-out.
+		enabled = true
+		#Exhaustion added per tick while actively gliding with a VC Glider.
+		# Default: 0.002
+		# Range: 0.0 ~ 1.0
+		increasePerTick = 0.002
+		#Exhaustion level at which an active glider is forced off (1.0 = full exhaustion).
+		# Default: 1.0
+		# Range: 0.0 ~ 1.0
+		dropThreshold = 1.0
+
+	#FFItemWeight compatibility (only active when ffitemweight is installed).
+	#Scales all non-raw exhaustion gains by the player's current encumbrance level.
+	#Keys are integer levels from ffitemweight datapack bands (0 = lightest).
+	#Display names still work as a fallback. Unlisted levels use 1.0.
+	[compat.item_weight]
+		#Enable encumbrance-based exhaustion gain multipliers.
+		enabled = true
+		#Per-level gain multipliers. Format: level:multiplier
+		#Example: 3:1.5 means 50% more exhaustion gain at encumbrance level 3.
+		#Default FFItemWeight levels: 0 Unencumbered, 1 Light, 2 Medium, 3 Heavy, 4 Overloaded, 5 Immobile.
+		#Legacy Name:multiplier entries still match the band display name.
+		gainMultipliers = ["0:1.0", "1:1.1", "2:1.25", "3:1.5", "4:1.75", "5:2.0"]
+
+#Level-based exhaustion modifiers (uses Minecraft's vanilla experience level).
+#Disabling this only turns off the gain/delay modifiers; vanilla leveling is unaffected.
+[player_level]
+	#When true, higher vanilla XP levels reduce exhaustion gain and recovery delay.
+	modifiersEnabled = true
+	#Vanilla levels above this are treated as this value for modifier calculations.
+	# Default: 60
+	# Range: 1 ~ 1000
+	maxLevelForModifiers = 60
+	#Per-level multiplier applied to all exhaustion gains.
+	#Effective gain = base * (1 - (level-1) * thisValue), floored at 0.1.
+	#Example: 0.01 at level 11 → 10% less gain.
+	# Default: 0.01
+	# Range: 0.0 ~ 1.0
+	gainMultiplierPerLevel = 0.01
+	#Fraction of base recovery delay removed per level above 1.
+	#Effective delay = base * (1 - (level-1) * thisValue), floored at 0.
+	#Example: 0.01 at level 11 → 10% shorter delay.
+	# Default: 0.01
+	# Range: 0.0 ~ 1.0
+	delayReductionPerLevel = 0.01

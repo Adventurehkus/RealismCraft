@@ -1,0 +1,66 @@
+#Exhaustion HUD icon
+[hud_icon]
+	#Vertical screen anchor for the exhaustion icon
+	#Allowed Values: TOP, CENTER, BOTTOM
+	verticalAnchor = "BOTTOM"
+	#Horizontal screen anchor for the exhaustion icon
+	#Allowed Values: LEFT, MIDDLE, RIGHT
+	horizontalAnchor = "MIDDLE"
+	#X offset in pixels from the anchor point (positive = right)
+	# Default: 105
+	# Range: -10000 ~ 10000
+	offsetX = 105
+	#Y offset in pixels from the anchor point (positive = down)
+	# Default: -24
+	# Range: -10000 ~ 10000
+	offsetY = -24
+
+	#Icon stage thresholds (upper exclusive bound for each stage).
+	#Stage 0: 0.0 to stage0Max
+	#Stage 1: stage0Max to stage1Max
+	#...
+	#Stage 5: stage4Max to 1.0 (and exactly 1.0)
+	[hud_icon.stages]
+		#Upper bound for icon stage 0 (exhaustion_0.png)
+		# Default: 0.25
+		# Range: 0.0 ~ 1.0
+		stage0Max = 0.25
+		#Upper bound for icon stage 1 (exhaustion_1.png)
+		# Default: 0.5
+		# Range: 0.0 ~ 1.0
+		stage1Max = 0.5
+		#Upper bound for icon stage 2 (exhaustion_2.png)
+		# Default: 0.75
+		# Range: 0.0 ~ 1.0
+		stage2Max = 0.75
+		#Upper bound for icon stage 3 (exhaustion_3.png)
+		# Default: 0.9
+		# Range: 0.0 ~ 1.0
+		stage3Max = 0.9
+		#Upper bound for icon stage 4 (exhaustion_4.png); stage 5 is above this
+		# Default: 0.99
+		# Range: 0.0 ~ 1.0
+		stage4Max = 0.99
+
+	#Icon shake when exhaustion is high
+	[hud_icon.shake]
+		#Exhaustion value above which icon shake ramps up to full intensity at 1.0.
+		#Set to >=1.0 to disable shaking.
+		# Default: 0.5
+		# Range: 0.0 ~ 2.0
+		threshold = 0.5
+		#Maximum pixel offset at full exhaustion (1.0).
+		# Default: 1.5
+		# Range: 0.0 ~ 20.0
+		intensity = 1.5
+
+#Exhaustion value text (child of the icon)
+[hud_text]
+	#Whether to show the numeric exhaustion value next to the icon
+	enabled = false
+	#Position of the text relative to the icon
+	#Allowed Values: LEFT, RIGHT, ABOVE, BELOW
+	position = "BELOW"
+	#Visual style applied to the exhaustion text
+	#Allowed Values: NONE, PLAIN, DROP_SHADOW, OUTLINE, BOLD, BOLD_OUTLINE, BOLD_DROP_SHADOW, OUTLINE_SHADOW
+	style = "NONE"
