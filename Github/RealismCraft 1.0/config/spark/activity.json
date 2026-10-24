@@ -1,0 +1,106 @@
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "hkus4002",
+      "uniqueId": "3f2db5f4-0a84-4059-91e3-c5acd6025a59"
+    },
+    "time": 1792870679795,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/8NCc1U2JYP"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "hkus4002",
+      "uniqueId": "3f2db5f4-0a84-4059-91e3-c5acd6025a59"
+    },
+    "time": 1792869587841,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/dOyS575Sgp"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "hkus4002",
+      "uniqueId": "3f2db5f4-0a84-4059-91e3-c5acd6025a59"
+    },
+    "time": 1792805802782,
+    "type": "Heap dump summary",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/MksczAJPK3"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "hkus4002",
+      "uniqueId": "3f2db5f4-0a84-4059-91e3-c5acd6025a59"
+    },
+    "time": 1792804149863,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/vBDQaDu2Kl"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "hkus4002",
+      "uniqueId": "3f2db5f4-0a84-4059-91e3-c5acd6025a59"
+    },
+    "time": 1792796057095,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/NcbT2T8CaH"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "hkus4002",
+      "uniqueId": "3f2db5f4-0a84-4059-91e3-c5acd6025a59"
+    },
+    "time": 1792706198445,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/rkpJVwUzOi"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "hkus4002",
+      "uniqueId": "3f2db5f4-0a84-4059-91e3-c5acd6025a59"
+    },
+    "time": 1792705700460,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/nJVX2khqVS"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "hkus4002",
+      "uniqueId": "3f2db5f4-0a84-4059-91e3-c5acd6025a59"
+    },
+    "time": 1792705592883,
+    "type": "Profiler",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/6NElPAOUnT"
+    }
+  }
+]
