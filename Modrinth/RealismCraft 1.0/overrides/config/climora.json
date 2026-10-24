@@ -1,0 +1,14 @@
+{
+  "_about": "Climora server config. Reload with /climora reload. See docs/CONFIG.md for every option.",
+  "localWeather": true,
+  "activeRadiusCells": 3,
+  "tickBudgetMillis": 1.0,
+  "maxCellSamplesPerTick": 1,
+  "humidityBias": 0.0,
+  "snowAccumulation": true,
+  "snowMelting": true,
+  "waterFreezing": true,
+  "thunderstorms": true,
+  "lightningRate": 1.0,
+  "redirectWeatherCommand": true
+}
