@@ -12,4 +12,4 @@ Prepare, explore, build, and survive in a world that feels more alive.
 
 ## Mirror Pages
 - **Modrinth:** [https://modrinth.com/modpack/realismcraft-adventurehkus](https://modrinth.com/modpack/realismcraft-adventurehkus)
-- **CurseForge:** []()
+- **CurseForge:** [https://www.curseforge.com/minecraft/modpacks/realismcraft-immersive-survival](https://www.curseforge.com/minecraft/modpacks/realismcraft-immersive-survival)
