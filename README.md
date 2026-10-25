@@ -2,13 +2,13 @@
 
 Experience Minecraft survival with deeper realism, immersive environments, and enhanced exploration.
 
-- **Realistic Survival:** Keep an eye on your thirst, body temperature, stamina, and the changing seasons as you learn to survive.
-- **A Living World:** Explore towering mountains, dense forests, expanded biomes, and landscapes that feel more natural.
-- **Immersive Visuals:** Experience atmospheric lighting, realistic water, improved animations, and physics that make the world feel more alive.
-- **More to Discover:** Grow your own food, try new recipes, build detailed structures, and experiment with engineering.
-- **Made for Exploration:** Enjoy a richer survival experience that adds depth and challenge without losing the freedom that makes Minecraft special.
+- **Realistic Survival:** Keep track of thirst, body temperature, stamina, and the changing seasons.
+- **A Living World:** Discover towering mountains, dense forests, expanded biomes, and natural landscapes that make exploring feel like a real adventure.
+- **Immersive Visuals:** Enjoy atmospheric lighting, realistic water, enhanced animations, and physics that bring more life to the world around you.
+- **More to Discover:** Grow crops, prepare new meals, create detailed builds, and experiment with engineering as you shape your own world.
+- **Made for Exploration:** Take on a deeper survival experience with new challenges and details, without losing the creativity and freedom that make Minecraft so enjoyable.
 
-Gather your supplies, explore the unknown, build your home, and make the world your own.
+Gather your supplies, set out into the unknown, and find a place to call home. 
 
 ## Project Pages
 - **Modrinth:** [https://modrinth.com/modpack/realismcraft-adventurehkus](https://modrinth.com/modpack/realismcraft-adventurehkus)
