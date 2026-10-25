@@ -10,6 +10,6 @@ Experience Minecraft survival with deeper realism, immersive environments, and e
 
 Prepare, explore, build, and survive in a world that feels more alive.
 
-## Mirror Pages
+## Project Pages
 - **Modrinth:** [https://modrinth.com/modpack/realismcraft-adventurehkus](https://modrinth.com/modpack/realismcraft-adventurehkus)
 - **CurseForge:** [https://www.curseforge.com/minecraft/modpacks/realismcraft-immersive-survival](https://www.curseforge.com/minecraft/modpacks/realismcraft-immersive-survival)
