@@ -9,3 +9,7 @@ Experience Minecraft survival with deeper realism, immersive environments, and e
 - **Built for Exploration:** Experience a more immersive world while balancing realism, performance, and classic Minecraft freedom.
 
 Prepare, explore, build, and survive in a world that feels more alive.
+
+## Downloads
+- **Modrinth:** []
+- **CurseForge:** []
