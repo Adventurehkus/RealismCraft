@@ -10,6 +10,6 @@ Experience Minecraft survival with deeper realism, immersive environments, and e
 
 Prepare, explore, build, and survive in a world that feels more alive.
 
-## Downloads
+## Mirror Pages
 - **Modrinth:** []
 - **CurseForge:** []
